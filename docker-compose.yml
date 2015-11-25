@@ -1,0 +1,12 @@
+cassandra:
+  image: mashape/cassandra
+  expose:
+    - "9042"
+
+kong:
+  build: .
+  expose:
+    - "8000"
+    - "8001"
+  links:
+    - cassandra
