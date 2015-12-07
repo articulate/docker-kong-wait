@@ -1,10 +1,11 @@
 # Kong in Docker with Monit
 
-This is a image based on the official docker image which adds in monit.
+This is a image based on the official docker image which adds a smarter
+CMD which waits for cassandra to be online before starting kong.
 
 # Why?
 
-When you try to run kong in a `docker-compose` setup you will run into issues with cassandra taking too long to start.  By having monit restart kong automatically we don't have to care about timing, and we will end up with a working kong instance in the end.
+When you try to run kong in a `docker-compose` setup you will run into issues with cassandra taking too long to start.  By having the CMD wait for cassandra's port to be available, we avoid this issue.
 
 # Supported tags and respective `Dockerfile` links
 
@@ -17,4 +18,4 @@ You are invited to contribute new features, fixes, or updates, large or small; w
 
 Before you start to code, we recommend discussing your plans through a [GitHub issue][github-new-issue], especially for more ambitious contributions. This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.
 
-[github-new-issue]: https://github.com/articulate/docker-kong-monit/issues/new
+[github-new-issue]: https://github.com/articulate/docker-kong-wait/issues/new

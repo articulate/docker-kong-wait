@@ -1,9 +1,11 @@
 FROM mashape/kong:0.5.3
 MAINTAINER Brian Stolz, bstolz@articulate.com
 
-RUN yum install monit -y && yum clean all
+ENV CASSANDRA_HOSTNAME cassandra
+ENV CASSANDRA_PORT 9042
 
-COPY /monit.conf/monitrc /etc/monitrc
-RUN chmod 0700 /etc/monitrc
-
-CMD monit -Ivvc /etc/monitrc
+CMD echo "Waiting for cassandra on $CASSANDRA_HOSTNAME:$CASSANDRA_PORT..." \
+    && while ! nc $CASSANDRA_HOSTNAME $CASSANDRA_PORT; do sleep 0.1; echo "Trying..."; done \
+    && echo "Cassandra is ready! Launching Kong..." \
+    && kong start \
+    && tail -f /usr/local/kong/logs/error.log

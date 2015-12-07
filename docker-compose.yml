@@ -8,5 +8,8 @@ kong:
   expose:
     - "8000"
     - "8001"
+  environment:
+    CASSANDRA_HOSTNAME: cassandra
+    CASSANDRA_PORT: 9042
   links:
     - cassandra
