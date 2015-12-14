@@ -1,4 +1,4 @@
-# Kong in Docker with Monit
+# Kong in Docker with a better startup
 
 This is a image based on the official docker image which adds a smarter
 CMD which waits for cassandra to be online before starting kong.
