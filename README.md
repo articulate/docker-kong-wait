@@ -10,7 +10,8 @@ When you try to run kong in a `docker-compose` setup you will run into issues wi
 # Supported tags and respective `Dockerfile` links
 
 - `0.5.3` - *([Dockerfile](https://github.com/articulate/docker-kong-monit/blob/0.5.3/Dockerfile))*
-- `latest` - *([Dockerfile](https://github.com/articulate/docker-kong-monit/blob/0.5.3/Dockerfile))*
+- `0.6.0rc2` - *([Dockerfile](https://github.com/articulate/docker-kong-monit/blob/0.6.0rc2/Dockerfile))*
+- `latest` - *([Dockerfile](https://github.com/articulate/docker-kong-monit/blob/0.6.0rc2/Dockerfile))*
 
 ## Contributing
 
