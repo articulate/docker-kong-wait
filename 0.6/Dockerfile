@@ -1,4 +1,4 @@
-FROM mashape/kong:0.6.0
+FROM mashape/kong:0.6.1
 MAINTAINER Brian Stolz, bstolz@articulate.com
 
 ENV CASSANDRA_HOSTNAME cassandra
